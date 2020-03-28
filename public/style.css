@@ -1,0 +1,13 @@
+body {
+	display: flex;
+	min-height: 100vh;
+}
+
+.container {
+	text-align: center;
+	align-self: center;
+}
+
+.form-inline {
+	justify-content: center;
+}

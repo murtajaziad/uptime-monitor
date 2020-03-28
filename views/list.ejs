@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("../partials/head") %>
+	<body>
+		<div class="container">
+			<h1 class="mb-3">🕙 Uptime monitor</h1>
+			<h4 class="mb-5">URLs list</h4>
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">Full URL</th>
+			      <th scope="col">Actions</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<% urls.forEach(url => { %> 
+				  	<tr>
+				      <td><a href="<%= url.url %>"><%= url.url %></a></td>
+				      <td><form action="/delete/<%= url._id %>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger">Delete</button></form></td>
+				    </tr>
+			  	<% }) %>
+			  </tbody>
+			</table>
+		</div>
+	</body>
+</html>
